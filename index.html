@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101114">
+  <meta name="description" content="Moreda ERP — leather manufacturing operations">
+  <title>MOREDA ERP | Leather Manufacturing</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <section id="login-screen" class="login-screen" hidden>
+    <div class="login-card">
+      <div class="brand-mark">M</div>
+      <p class="eyebrow">MOREDA LEATHERWARE</p>
+      <h1>Moreda ERP</h1>
+      <p class="muted">Sign in to your manufacturing workspace.</p>
+      <form id="login-form" class="stack gap-large">
+        <label>Email address <input type="email" name="email" autocomplete="username" required placeholder="you@company.com"></label>
+        <label>Password <input type="password" name="password" autocomplete="current-password" required></label>
+        <button class="btn primary" type="submit">Sign in</button>
+      </form>
+      <p class="hint">Authorized staff only. Keep your password private.</p>
+    </div>
+  </section>
+
+  <div id="app-shell" class="shell" hidden>
+    <aside class="sidebar">
+      <div class="logo-row"><div class="brand-mark small">M</div><div><div class="wordmark">MOREDA</div><div class="logo-sub">ERP SYSTEM</div></div></div>
+      <p class="nav-label">WORKSPACE</p>
+      <nav id="navigation" aria-label="ERP sections"></nav>
+      <div class="sidebar-bottom"><span class="status-dot"></span> Connected workspace <p class="muted micro">Moreda Leatherware · Zimbabwe</p></div>
+    </aside>
+    <div class="main-area">
+      <header class="topbar">
+        <div><p class="eyebrow">LEATHER MANUFACTURING</p><h1 id="page-heading">Overview</h1></div>
+        <div class="profile"><div class="profile-data"><strong id="profile-name"></strong><small id="profile-role"></small></div><button id="logout" class="btn subtle">Sign out</button></div>
+      </header>
+      <div id="alert" class="alert" role="alert" hidden></div>
+      <main id="content" class="content" aria-live="polite"></main>
+      <footer>MOREDA LEATHERWARE © <span id="year"></span> <span class="sep">|</span> ERP Starter v1.0</footer>
+    </div>
+  </div>
+</body>
+</html>
