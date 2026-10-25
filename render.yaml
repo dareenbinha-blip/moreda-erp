@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: moreda-erp
+    runtime: python
+    plan: free # prototype only; upgrade for actual business use
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /healthz
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: DATABASE_URL
+        fromDatabase:
+          name: moreda-erp-db
+          property: connectionString
+
+databases:
+  - name: moreda-erp-db
+    plan: free # prototype only; free databases expire and are unsuitable for real records
